@@ -19,8 +19,8 @@ const cartSchema = new Schema({
     }
 
 })
-
-cartSchema.pre('findOne', function () {
+// agrego niddleware .pre para poder usar populate
+cartSchema.pre('findOne', function () { // uso findOne en ves de findById
     this.populate('products.id_prod')
 })
 

@@ -15,7 +15,9 @@ cartRouter.post('/', async (req, res) => {
 cartRouter.get('/:cid', async (req, res) => {
     try {
         const cartId = req.params.cid
-        const cart = await cartModel.findOne({ _id:cartId })
+        //usando populate
+        // const cart = await cartModel.findById(cartId).populate('products.id_prod')
+        const cart = await cartModel.findOne({ _id:cartId }) 
         res.status(200).send(cart)
     } catch (error) {
         res.status(500).send(`Error interno del servidor al consultar carrito: ${error}`)
