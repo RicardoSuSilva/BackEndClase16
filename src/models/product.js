@@ -4,7 +4,7 @@ const productSchema = new Schema({
     title: {
         type: String,
         required: true,
-        index: true
+        index: true // genero indice a title
     },
     description: {
         type: String,

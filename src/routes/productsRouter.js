@@ -6,7 +6,8 @@ const productsRouter = Router()
 productsRouter.get('/', async (req, res) => {
     try {
         const { limit } = req.query
-        const prods = await productModel.find().lean()
+        const prods = await productModel.find().lean() // consulto todos los productos con el metodo find
+        // con metodo lean los transformo en json y los limito 
         let limite = parseInt(limit)
         if (!limite)
             limite = prods.length

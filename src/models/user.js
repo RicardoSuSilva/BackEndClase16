@@ -17,7 +17,7 @@ const userSchema = new Schema({
         type: Number,
         required: true
     },
-    email: {
+    email: {    //agrego indice a este atributo unico index: true
         type: String,
         unique: true,
         index: true

@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose'
-
+//carrito solo guarda IDs de productos con el atributo ref.
 const cartSchema = new Schema({
     products: {
         type: [
@@ -15,7 +15,7 @@ const cartSchema = new Schema({
                 }
             }
         ],
-        default: []
+        default: [] // arranca vacio el array
     }
 
 })
